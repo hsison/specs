@@ -1,0 +1,57 @@
+<div class="board">
+
+  <h3>Frame Search:</h3>
+
+<p>
+  Enter the color & style of glasses you're looking for.
+  <br>
+  Ex: red vintage, blue modern, gucci, prada, etc.
+</p>
+
+
+<div class="results">
+
+</div>
+
+
+
+<form id="search" action="/glasses" method="post" onsubmit='return false'>
+
+  <input id="product" name="term" type="text" placeholder="red vintage etc.">
+
+  <input type="submit" value="search glasses">
+
+</form>
+
+
+<div id="result_template" style="display: none;">
+  <div class="product">
+
+    <div class="picture">
+    </div>
+
+    <div class="title">
+    </div>
+
+
+    <div class="price">
+    </div>
+
+    <div class="status">
+    </div>
+
+    <div class="buttons">
+    </div>
+
+    <button><a href="#" class="add-product">Add to wishlist</a></button>
+
+    <span>
+    </span>
+
+    <button><a href={{ this.url }}>See it on Etsy</a></button>
+
+
+  </div>
+</div>
+
+

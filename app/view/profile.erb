@@ -1,0 +1,28 @@
+<div class="container">
+
+  <h1>Dreaming of /specs.</h1>
+
+  <h2>Hey <%= "#{current_user.username}" %>!</h2>
+
+  <div id="show_wishlists">
+    <% if @wishlists.length != 0 %>
+      <p>Here are your wishlists:</p>
+      <% @wishlists.each do |list| %>
+        <a href="/users/<%= current_user.id %>/wishlists/<%= list.id %>"><%= "#{list.title}" %></a><br>
+      <% end %>
+    <% else %>
+      <p>You have no wishlists yet.<br>Create one and start digging for treasures right away!"</p>
+    <% end %>
+  </div>
+
+
+  <div id="create_wishlist">
+    <form action="/users/<%=current_user.id%>/wishlists" method="post">
+      <h4>Create a Wishlist:</h4>
+      <p>Title:</p>
+      <input type="text" name="wishlist[title]" placeholder="e.g., Cool stuff">
+      <p>Notes:</p>
+      <input type="text" name="wishlist[notes]" placeholder="e.g., For Christmas"><br>
+      <input type="submit" value="Save my list">
+    </form>
+  </div>
